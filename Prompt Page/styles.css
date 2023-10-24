@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    width: 70%;
+    background-color: #ffffff;
+    padding: 3em;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 5em;
+    font-weight: 700; /* Bold weight for Oswald */
+    color: rgb(0,66,129);
+    letter-spacing: 2px; /* Adding some spacing between letters for better readability */
+    text-transform: uppercase; /* Making sure it's uppercase */
+}
+
+.description {
+    margin-top: 0.5em;
+    color: #7f8c8d;
+    font-weight: bold;
+}
+
+.query-box i {
+    padding: 0.8em;
+    cursor: pointer;
+    background-color: #3498db;
+    color: #ffffff;
+}
+
+
+.query-box {
+    margin-top: 2em;
+    position: relative;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;  /* make it a flex container */
+    justify-content: center;  /* center content horizontally */
+}
+
+.query-box-wrapper {
+    display: flex; 
+    align-items: center;
+    border: 2px solid rgb(0,66,129);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* This ensures border radius is respected by child elements */
+    width: 100%;  /* take full width of the parent container */
+}
+
+.query-box input {
+    padding: 0.8em;
+    width: 100%;
+    border: none;
+    outline: none;
+    flex-grow: 1; /* Makes input field take up available space */
+    border-right: 1px solid #ccc; /* subtle line between input and button */
+}
+
+
+.query-box button {
+    padding: 0.8em 1.5em;
+    border: none;
+    background-color: rgb(0,66,129);
+    color: #ffffff;
+    cursor: pointer;
+}
+.wind-turbine {
+    margin-top: 2em;
+}
+
+.wind-turbine img {
+    max-width: 100%;
+    height: auto;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #df5555;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 70%;
+    text-align: center;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#cameraContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   /*( height: 600px; /* This assumes you want to vertically center it in the viewport. Adjust as needed. */
+}
+
+#cameraPreview {
+    /* Your other styles for the video element if any */
+}
+
+#controlsContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;  /* add some space between video and button */
+}
+
+#captureButton, #startCameraButton {
+    /* styles for buttons if any, like padding, background, etc. */
+}

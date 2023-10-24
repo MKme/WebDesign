@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAL - Vestas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            VAL
+        </div>
+        <div class="description">
+            Velma Analytics & Learning <BR>
+            The newest innovation in Manufacturing and cutting-edge service
+        </div>
+        <div class="query-box">
+            <div class="query-box-wrapper">
+                <input type="text" placeholder="Enter your query here..." id="voiceInput" />
+                <button type="submit">Search</button>
+                <i class="fas fa-microphone" id="microphone"></i>
+            </div>
+        </div>
+<br>
+<br>
+        <label for="file">Upload a file to discuss: <input id="file" type="file" name="file" /></label>
+<br>
+<br>
+<div id="cameraContainer">
+    <video id="cameraPreview" width="320" height="240" autoplay style="display:none;"></video>
+</div>
+
+<div id="controlsContainer">
+    <button id="startCameraButton">Take a picture</button>
+    <button id="captureButton" style="display:none;">Capture</button>
+</div>
+<canvas id="snapshotCanvas" width="320" height="240" style="display:none;"></canvas>
+        <div class="wind-turbine">
+          
+            <!-- Place your graphic here -->
+            <img src="https://cached.imagescaler.hbpl.co.uk/resize/scaleWidth/882/cached.offlinehbpl.hbpl.co.uk/news/OPW/VestasV23615MW.png" alt="Wind Turbine">
+        </div>
+    </div>
+    <script>
+        const microphone = document.getElementById("microphone");
+        const voiceInput = document.getElementById("voiceInput");
+    
+        microphone.onclick = function() {
+            if (window.hasOwnProperty('webkitSpeechRecognition')) {
+                const recognition = new webkitSpeechRecognition();
+                recognition.continuous = false;
+                recognition.interimResults = false;
+                recognition.lang = "en-US"; // change to your preferred language
+                recognition.start();
+    
+                recognition.onresult = function(e) {
+                    voiceInput.value = e.results[0][0].transcript;
+                    recognition.stop();
+                };
+    
+                recognition.onerror = function(e) {
+                    recognition.stop();
+                }
+            } else {
+                alert("Your browser doesn't support speech recognition. Please use a modern browser like Chrome.");
+            }
+        }
+    </script>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <p>I'm afraid I can't do that, Dave.</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
